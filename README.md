@@ -124,37 +124,3 @@ Input sanitization
 XSS protection
 JWT authentication
 Password hashing with bcrypt
-Project Structure
-├── config/
-│   └── database.js
-├── controllers/
-│   ├── authController.js
-│   ├── movieController.js
-│   ├── cinemaController.js
-│   ├── showtimeController.js
-│   ├── bookingController.js
-│   └── feedbackController.js
-├── middleware/
-│   └── errorHandler.js
-├── models/
-│   ├── User.js
-│   ├── Movie.js
-│   ├── Cinema.js
-│   ├── Showtime.js
-│   ├── Booking.js
-│   └── Feedback.js
-├── routes/
-│   ├── authRoutes.js
-│   ├── movieRoutes.js
-│   ├── cinemaRoutes.js
-│   ├── showtimeRoutes.js
-│   ├── bookingRoutes.js
-│   └── feedbackRoutes.js
-├── utils/
-│   ├── appError.js
-│   ├── catchAsync.js
-│   ├── apiFeatures.js
-│   └── seed.js
-├── app.js
-├── server.js
-└── package.json
