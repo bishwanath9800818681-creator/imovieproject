@@ -1,0 +1,8 @@
+I-Movies : MovieTicket Booking System
+Project Description:
+Users can effortlessly browse movies, select showtime, and choose seats from the comfort of their homes. purchase a robust client-server architecture with Express.js and MongoDB, the app ensures efficient data storage and retrieval.
+With features like user hallmark, booking management, and real-time seat handiness tracking, it provides a personalized and convenient movie-going experience. This support provides a comprehensive guide for setup, development, and understanding of the application's technical architecture and functionalities.
+Scenario Imagine Sarah, a movie enthusiast, excitedly expecting the release of an anticipated film. With a busy schedule, she prefers the convenience of booking her movie tickets online. Logging into the iMovies app, Sarah navigates effortlessly through the user-friendly interface, browsing the list of usable movies and show times.
+Upon finding the movie she has been eagerly awaiting, Sarah selects her preferred cinema location and showtime. The app displays a seating layout, allowing her to choose the perfect seats for an optimal viewing see. With a few clicks, Sarah confirms her booking and proceeds to the payment section.
+Using the secure payment gateway integrated into the iMovies app, Sarah completes her transaction smoothly, receiving a booking confirmation with all the details she needs for her upcoming movie night. As the date approaches, Sarah can easily access her booking history through the app, ensuring a hassle-free experience from start to finish.
+Thanks to the iMovies app's intuitive design and robust features, Sarah enjoys a seamless movie- going experience, making her next cinema outing memorable and stress-free.
