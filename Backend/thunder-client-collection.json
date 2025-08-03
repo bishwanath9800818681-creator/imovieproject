@@ -1,0 +1,442 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "iMovieShow API - Complete",
+  "collectionId": "imovieshow-api-complete",
+  "dateExported": "2024-01-01T00:00:00.000Z",
+  "version": "1.0",
+  "folders": [
+    {
+      "name": "Auth",
+      "containerId": "auth",
+      "requests": [
+        {
+          "name": "Health Check",
+          "url": "http://localhost:5000/",
+          "method": "GET",
+          "headers": []
+        },
+        {
+          "name": "Register User",
+          "url": "http://localhost:5000/api/v1/auth/register",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"phone\": \"+1234567890\",\n  \"password\": \"test1234\",\n  \"passwordConfirm\": \"test1234\"\n}"
+          }
+        },
+        {
+          "name": "Register Admin",
+          "url": "http://localhost:5000/api/v1/auth/register",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"name\": \"Admin User\",\n  \"email\": \"admin2@example.com\",\n  \"phone\": \"+1234567891\",\n  \"password\": \"admin123\",\n  \"passwordConfirm\": \"admin123\",\n  \"role\": \"admin\"\n}"
+          }
+        },
+        {
+          "name": "Login User",
+          "url": "http://localhost:5000/api/v1/auth/login",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"test1234\"\n}"
+          }
+        },
+        {
+          "name": "Login Admin",
+          "url": "http://localhost:5000/api/v1/auth/login",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"email\": \"admin@imovieshow.com\",\n  \"password\": \"admin123\"\n}"
+          }
+        },
+        {
+          "name": "Get Current User",
+          "url": "http://localhost:5000/api/v1/auth/me",
+          "method": "GET",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN_HERE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Movies",
+      "containerId": "movies",
+      "requests": [
+        {
+          "name": "Get All Movies",
+          "url": "http://localhost:5000/api/v1/movies",
+          "method": "GET",
+          "headers": []
+        },
+        {
+          "name": "Get Movie by ID",
+          "url": "http://localhost:5000/api/v1/movies/MOVIE_ID_HERE",
+          "method": "GET",
+          "headers": []
+        },
+        {
+          "name": "Create Movie (Admin)",
+          "url": "http://localhost:5000/api/v1/movies",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"title\": \"The Dark Knight\",\n  \"description\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests.\",\n  \"genre\": [\"Action\", \"Crime\", \"Drama\"],\n  \"language\": [\"English\"],\n  \"duration\": \"2h 32m\",\n  \"releaseDate\": \"2008-07-18\",\n  \"rating\": 4.9,\n  \"certification\": \"UA\",\n  \"poster\": \"https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg\",\n  \"banner\": \"https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg\",\n  \"trailerUrl\": \"https://youtube.com/embed/EXeTwQWrcwY\",\n  \"cast\": [\n    {\"name\": \"Christian Bale\", \"role\": \"Bruce Wayne / Batman\", \"photo\": \"https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg\"},\n    {\"name\": \"Heath Ledger\", \"role\": \"Joker\", \"photo\": \"https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg\"}\n  ],\n  \"director\": \"Christopher Nolan\",\n  \"producer\": \"Emma Thomas\",\n  \"music\": \"Hans Zimmer\",\n  \"status\": \"now_showing\"\n}"
+          }
+        },
+        {
+          "name": "Update Movie (Admin)",
+          "url": "http://localhost:5000/api/v1/movies/MOVIE_ID_HERE",
+          "method": "PATCH",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"title\": \"The Dark Knight - Updated\",\n  \"rating\": 5.0\n}"
+          }
+        },
+        {
+          "name": "Delete Movie (Admin)",
+          "url": "http://localhost:5000/api/v1/movies/MOVIE_ID_HERE",
+          "method": "DELETE",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cinemas",
+      "containerId": "cinemas",
+      "requests": [
+        {
+          "name": "Get All Cinemas",
+          "url": "http://localhost:5000/api/v1/cinemas",
+          "method": "GET",
+          "headers": []
+        },
+        {
+          "name": "Get Cinema by ID",
+          "url": "http://localhost:5000/api/v1/cinemas/CINEMA_ID_HERE",
+          "method": "GET",
+          "headers": []
+        },
+        {
+          "name": "Get Cinemas by Location",
+          "url": "http://localhost:5000/api/v1/cinemas/location?city=Bengaluru",
+          "method": "GET",
+          "headers": []
+        },
+        {
+          "name": "Create Cinema (Admin)",
+          "url": "http://localhost:5000/api/v1/cinemas",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"name\": \"Cinepolis\",\n  \"location\": \"Nexus Mall\",\n  \"address\": \"Nexus Mall, Koramangala, Bengaluru\",\n  \"city\": \"Bengaluru\",\n  \"amenities\": [\"Dolby Atmos\", \"3D\", \"Food Court\", \"Parking\", \"Wheelchair Access\"],\n  \"screens\": [\n    {\"name\": \"Screen 1\", \"type\": \"imax\", \"seatingCapacity\": 300},\n    {\"name\": \"Screen 2\", \"type\": \"4dx\", \"seatingCapacity\": 200},\n    {\"name\": \"Screen 3\", \"type\": \"premium\", \"seatingCapacity\": 150}\n  ],\n  \"rating\": 4.6\n}"
+          }
+        },
+        {
+          "name": "Update Cinema (Admin)",
+          "url": "http://localhost:5000/api/v1/cinemas/CINEMA_ID_HERE",
+          "method": "PATCH",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"name\": \"Cinepolis - Updated\",\n  \"rating\": 4.8\n}"
+          }
+        },
+        {
+          "name": "Delete Cinema (Admin)",
+          "url": "http://localhost:5000/api/v1/cinemas/CINEMA_ID_HERE",
+          "method": "DELETE",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Showtimes",
+      "containerId": "showtimes",
+      "requests": [
+        {
+          "name": "Get All Showtimes",
+          "url": "http://localhost:5000/api/v1/showtimes",
+          "method": "GET",
+          "headers": []
+        },
+        {
+          "name": "Get Showtime by ID",
+          "url": "http://localhost:5000/api/v1/showtimes/SHOWTIME_ID_HERE",
+          "method": "GET",
+          "headers": []
+        },
+        {
+          "name": "Create Showtime (Admin)",
+          "url": "http://localhost:5000/api/v1/showtimes",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"movie\": \"MOVIE_ID_HERE\",\n  \"cinema\": \"CINEMA_ID_HERE\",\n  \"screen\": \"Screen 1\",\n  \"time\": \"9:00 PM\",\n  \"date\": \"2024-01-20\",\n  \"availableSeats\": 250,\n  \"price\": 450\n}"
+          }
+        },
+        {
+          "name": "Update Showtime (Admin)",
+          "url": "http://localhost:5000/api/v1/showtimes/SHOWTIME_ID_HERE",
+          "method": "PATCH",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"price\": 500,\n  \"availableSeats\": 200\n}"
+          }
+        },
+        {
+          "name": "Delete Showtime (Admin)",
+          "url": "http://localhost:5000/api/v1/showtimes/SHOWTIME_ID_HERE",
+          "method": "DELETE",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "containerId": "bookings",
+      "requests": [
+        {
+          "name": "Create Booking (User)",
+          "url": "http://localhost:5000/api/v1/bookings",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_USER_JWT_TOKEN_HERE"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"showtimeId\": \"SHOWTIME_ID_HERE\",\n  \"seats\": [\"A1\", \"A2\"],\n  \"paymentMethod\": \"card\"\n}"
+          }
+        },
+        {
+          "name": "Get User Bookings",
+          "url": "http://localhost:5000/api/v1/bookings/my-bookings",
+          "method": "GET",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_USER_JWT_TOKEN_HERE"
+            }
+          ]
+        },
+        {
+          "name": "Get Booking by ID",
+          "url": "http://localhost:5000/api/v1/bookings/BOOKING_ID_HERE",
+          "method": "GET",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_USER_JWT_TOKEN_HERE"
+            }
+          ]
+        },
+        {
+          "name": "Get All Bookings (Admin)",
+          "url": "http://localhost:5000/api/v1/bookings",
+          "method": "GET",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ]
+        },
+        {
+          "name": "Cancel Booking",
+          "url": "http://localhost:5000/api/v1/bookings/BOOKING_ID_HERE/cancel",
+          "method": "PATCH",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_USER_JWT_TOKEN_HERE"
+            }
+          ]
+        },
+        {
+          "name": "Update Booking (Admin)",
+          "url": "http://localhost:5000/api/v1/bookings/BOOKING_ID_HERE",
+          "method": "PATCH",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"status\": \"confirmed\"\n}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Feedback",
+      "containerId": "feedback",
+      "requests": [
+        {
+          "name": "Create Feedback",
+          "url": "http://localhost:5000/api/v1/feedback",
+          "method": "POST",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "type": "json",
+            "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"phone\": \"+9876543210\",\n  \"rating\": 5,\n  \"category\": \"website\",\n  \"subject\": \"Great Experience\",\n  \"message\": \"The website is very user-friendly and the booking process is smooth.\"\n}"
+          }
+        },
+        {
+          "name": "Get All Feedback (Admin)",
+          "url": "http://localhost:5000/api/v1/feedback",
+          "method": "GET",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ]
+        },
+        {
+          "name": "Get Feedback by ID",
+          "url": "http://localhost:5000/api/v1/feedback/FEEDBACK_ID_HERE",
+          "method": "GET",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ]
+        },
+        {
+          "name": "Delete Feedback (Admin)",
+          "url": "http://localhost:5000/api/v1/feedback/FEEDBACK_ID_HERE",
+          "method": "DELETE",
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_ADMIN_JWT_TOKEN_HERE"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "requests": []
+}
